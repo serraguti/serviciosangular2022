@@ -5,17 +5,38 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { PadrecomicsComponent } from './components/padrecomics/padrecomics.component';
 import { HijocomicComponent } from './components/hijocomic/hijocomic.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { HomeComponent } from './components/home/home.component';
+import { ComicsinyeccionComponent } from './components/comicsinyeccion/comicsinyeccion.component';
+import { ComicsService } from './services/comics.service';
+import  {HttpClientModule} from '@angular/common/http';
+import { PersonasapiComponent } from './components/personasapi/personasapi.component';
+
+import { PersonasService } from './services/personas.service';
+import { EmpleadosService } from './services/empleados.service';
+import { EmpleadossalarioComponent } from './components/empleadossalario/empleadossalario.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PadrecomicsComponent,
-    HijocomicComponent
+    HijocomicComponent,
+    MenuComponent,
+    HomeComponent,
+    ComicsinyeccionComponent,
+    PersonasapiComponent,
+    EmpleadossalarioComponent
   ],
   imports: [
-    BrowserModule, routing, FormsModule
+    HttpClientModule
+    , BrowserModule
+    , routing
+    , FormsModule
   ],
-  providers: [appRoutingProviders],
+  providers: [EmpleadosService
+    , appRoutingProviders
+    , ComicsService
+    , PersonasService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

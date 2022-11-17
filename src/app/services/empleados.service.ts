@@ -19,5 +19,15 @@ export class EmpleadosService {
         return this._http.get(url);
     }
 
-    
+    getOficios(): Observable<any> {
+        var request = "/api/empleados/oficios";
+        var url = environment.urlApiEmpleados + request;
+        return this._http.get(url);
+    }
+
+    getEmpleadosOficio(oficio: string): Observable<any> {
+        var request = "/api/empleados/empleadosoficio/" + oficio;
+        var url = environment.urlApiEmpleados + request;
+        return this._http.get(url);
+    }
 }

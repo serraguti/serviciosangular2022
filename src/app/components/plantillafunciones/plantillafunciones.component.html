@@ -1,0 +1,32 @@
+<div>
+    <h1>Plantilla Múltiple Api</h1>
+    <form #plantillaForm="ngForm">
+        <label>Seleccione funciones:</label>
+        <select #selectfunciones name="selectfunciones"
+        multiple size="5" class="form-control">
+            <option *ngFor="let fun of funciones">
+                {{fun}}
+            </option>
+        </select>
+        <button class="btn btn-success" (click)="mostrarPlantilla()">
+            Mostrar plantilla
+        </button>
+    </form>
+    <hr/>
+    <table class="table table-bordered" *ngIf="plantillas">
+        <thead>
+            <tr>
+                <th>Apellido</th>
+                <th>Función</th>
+                <th>Salario</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let plan of plantillas">
+                <td>{{plan.apellido}}</td>
+                <td>{{plan.funcion}}</td>
+                <td>{{plan.salario}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

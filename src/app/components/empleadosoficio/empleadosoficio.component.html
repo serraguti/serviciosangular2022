@@ -2,7 +2,8 @@
     <h1>Empleados Oficio Api</h1>
     <form #empleadosForm="ngForm">
         <label>Seleccione un oficio: </label>
-        <select #selectoficio name="selectoficio" class="form-control">
+        <select #selectoficio name="selectoficio" class="form-control"
+        multiple size="5">
             <option *ngFor="let oficio of oficios">
                 {{oficio}}
             </option>
